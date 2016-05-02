@@ -1,0 +1,27 @@
+<ion-navbar primary *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Add Ticket</ion-title>
+</ion-navbar>
+<ion-content class="add-tickets">
+    <form (ngSubmit)="addTicket()" #ticketForm="ngForm">
+        <ion-list>
+            <ion-item>
+    		    <ion-label floating>Fee</ion-label>
+    		    <ion-input type="number" [(ngModel)]="model.fee"   placeholder="" #fee="ngForm" required></ion-input>
+            </ion-item>
+            <ion-item>
+    		    <ion-label floating>Date</ion-label>
+    		    <ion-input type="date" [(ngModel)]="model.date" placeholder="" required></ion-input>
+            </ion-item>
+            <ion-item>
+    			<ion-label floating>Location</ion-label>
+                <ion-input type="text" location-picker (onPlaceChanged)="setLatLng($event)" required></ion-input>
+            </ion-item>
+        </ion-list>
+        <div padding>
+            <button block secondary type="submit" [disabled]="!ticketForm.form.valid">Add Ticket</button>
+        </div>
+    </form>
+</ion-content>

@@ -1,0 +1,28 @@
+<ion-navbar primary *navbar>
+    <button menuToggle>
+        <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Options</ion-title>
+</ion-navbar>
+
+
+<ion-content class="options">
+
+    <ion-list>
+        <ion-item>
+            <ion-label>Color</ion-label>
+            <ion-select [(ngModel)]="options.colorScheme">
+                <ion-option *ngFor="#scheme of schemes | keys" [value]="scheme.key">
+                    {{scheme.value}}
+                </ion-option>
+            </ion-select>
+        </ion-item>
+        <ion-item>
+            <ion-label>Show Ads</ion-label>
+            <ion-toggle secondary [(ngModel)]="options.showAds"></ion-toggle>
+        </ion-item>
+    </ion-list>
+    <div padding>
+        <button block secondary (click)="saveOptions()">Save</button>
+    </div>
+</ion-content>
