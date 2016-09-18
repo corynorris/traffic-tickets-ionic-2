@@ -58,8 +58,6 @@ export class MapPage {
                 data => this._heatmap.setData(data),
                 error => console.log(error)
             );
-        // this._heatmap.setData(
-        //     this._ticketService.getTicketsInRange(43.709477811055464, -79.39227523803709, 43.69052069047582, -79.40772476196287));
     }
 
     updateHeatmap() {
