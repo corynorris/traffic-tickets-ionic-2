@@ -1,3 +1,4 @@
+# Traffic Tickets (Ionic 2)
 ## Overview
 An `Ionic 2` project with `AngularJS 2 (Beta)` that demonstrates user interaction, google maps, and advanced map features such as heatmaps.
 
